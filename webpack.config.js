@@ -1,8 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const merge = require('webpack-merge');
+const webpack = require('webpack');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const common = {
+    mode: 'production',
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'build'),
@@ -52,10 +56,28 @@ const common = {
         extensions: ['.js', '.jsx']
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: path.resolve('./public/index.html')
-        })
-    ]
+        }),
+        new webpack.optimize.OccurrenceOrderPlugin(),
+    ],
+    optimization: {
+        minimizer: [new UglifyJsPlugin({
+            uglifyOptions: {
+              warnings: false,
+              parse: {},
+              compress: {},
+              mangle: true,
+              output: null,
+              toplevel: false,
+              nameCache: null,
+              ie8: false,
+              keep_fnames: false,
+            },
+          }),
+        ],
+      },
 };
 
 const developmentConfig = {
@@ -66,10 +88,10 @@ const developmentConfig = {
             errors: true,
             warnings: true
         },
-        port: 3003
+        port: 3002
     },
     watch: true,
-    devtool: 'inline-source-map'
+    devtool: 'eval'
 };
 
 module.exports = function (env) {
