@@ -1,18 +1,20 @@
-var path = require("path");
-var express = require("express");
-var open = require('open');
-var PORT = 3001;
-var app = express();
-var DIST_DIR = path.join(__dirname, "../../build");
+const path = require("path");
+const express = require("express");
+const open = require('open');
+const app = express();
+const PORT = 3001;
+const HOST = '127.0.0.1';
+const PROTOCOL = 'http://';
+const BUILD_PATH = '../../build';
+const FILE_NAME = 'index.html';
 
+const DIST_DIR = path.join(__dirname, BUILD_PATH);
 app.use(express.static(DIST_DIR));
-
 app.get("*", function (req, res) {
-  res.sendFile(path.join(DIST_DIR, "index.html"));
+  res.sendFile(path.join(DIST_DIR, FILE_NAME));
 });
 
-app.listen(PORT, '127.0.0.1',function(){
-    console.log('Server started...');
-    console.log(`Launching the browser on ${PORT} port`);
-    open(`http://127.0.0.1:${PORT}`);
+app.listen(PORT, HOST,function(){
+    console.log(`\nServer started on ${PORT} port`);
+    open(`${PROTOCOL}${HOST}:${PORT}`);
 });
