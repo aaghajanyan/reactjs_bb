@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { NavBar } from './components/NavBar';
 import './style.scss';
 
 class App extends React.Component {
     render () {
         return (
-            <div>React JS</div>
+            <Fragment>
+                <NavBar />
+            </Fragment>
         );
     }
 }
