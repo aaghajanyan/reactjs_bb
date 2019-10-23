@@ -24,5 +24,8 @@
     "plugins": [
         "react"
     ],
-    "rules": { }
+    "rules": { 
+        "no-debugger": 0,
+        "no-unsafe-finally": 0
+    }
 }

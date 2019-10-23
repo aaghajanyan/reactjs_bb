@@ -1,0 +1,18 @@
+.programs-container {
+    background-color: #f7f8fa;
+}
+
+.program-title {
+    padding: 20px 0 40px 0;
+    text-align: center;
+    font-size: 44px;
+    font-weight: 900;
+    color: #161819;
+}
+
+.filterContainer {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 1024px;
+}

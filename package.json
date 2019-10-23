@@ -15,7 +15,8 @@
     "bootstrap": "^4.3.1",
     "react": "^16.9.0",
     "react-bootstrap": "^1.0.0-beta.14",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "react-picky": "^4.7.2"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
