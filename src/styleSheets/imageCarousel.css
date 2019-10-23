@@ -1,0 +1,22 @@
+.image-container {
+  text-align: center;
+}
+
+.image-item {
+    height: 215px;
+    width: 100%;
+    cursor: pointer;
+}
+
+@media (max-width: 1520px) {
+  .image-item {
+      width: auto;
+  }
+}
+
+@media (max-width: 550px) {
+    .image-item {
+        width: auto;
+        height: auto;
+    }
+}

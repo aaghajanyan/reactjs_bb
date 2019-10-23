@@ -15,7 +15,8 @@
     "bootstrap": "^4.3.1",
     "react": "^16.9.0",
     "react-bootstrap": "^1.0.0-beta.14",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "react-picky": "^4.7.2"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
@@ -25,9 +26,9 @@
     "@babel/preset-react": "^7.6.3",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
     "csv-loader": "^3.0.2",
-    "clean-webpack-plugin": "^3.0.0",
     "eslint": "^6.5.1",
     "eslint-loader": "^3.0.2",
     "eslint-plugin-react": "^7.16.0",

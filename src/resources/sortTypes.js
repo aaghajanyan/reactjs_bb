@@ -1,0 +1,1 @@
+export let sortTypes = [ "Featured", "Newest", "A-Z"];

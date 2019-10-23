@@ -1,0 +1,160 @@
+.main-container {
+    display: inline-block;
+    height: 40px;
+    position: relative;
+}
+
+.main-container:hover #picky__button__button,
+.main-container:hover .mainIcon {
+    background-color: white;
+    outline: none;
+}
+.main-container:focus-within #picky__button__button,
+.main-container:focus-within .mainIcon{
+    background-color: #f0f2f7;
+    outline: none;
+}
+
+.mainIcon {
+    height: 35px;
+    width: 40px;
+    padding-left: 15px;
+}
+
+#picky {
+    display: inline;
+    font-size: 12px;
+}
+.picky:focus-within {
+    outline: none;
+}
+
+#picky__button__button {
+    background-color: #f7f8fa;
+    height: 35px;
+    width: 105px;
+    padding-left: 15px;
+    border: none;
+    font-weight: bold;
+}
+
+div.level > #picky__button__button {
+    width: 170px;
+}
+div.type > #picky__button__button {
+    width: 130px;
+}
+div.trainer > #picky__button__button {
+    width: 140px;
+}
+
+div.picky > button.picky__input > span {
+    display: none;
+}
+div.level > button.picky__input:before {
+    content: "Fitness level";
+}
+
+div.time > button.picky__input:before {
+    content: "Time";
+}
+
+div.type > button.picky__input:before {
+    content: "Type";
+}
+
+div.trainer > button.picky__input:before {
+    content: "Trainer";
+}
+button.picky__input:after {
+    content: url("../assets/icons8-expand-arrow-32.png");
+}
+
+.picky__dropdown {
+    margin-left: -42px;
+    outline: none;
+}
+.picky__dropdown li.selected {
+    background-color: white;
+}
+div.level .picky__dropdown {
+    width: 210px;
+}
+div.time .picky__dropdown {
+    width: 150px;
+}
+div.trainer .picky__dropdown {
+    width: 180px;
+}
+div.type .picky__dropdown {
+    width: 170px;
+}
+
+.iconClass {
+    height: 15px;
+    width: 30px;
+    margin: 5px 10px 0 0;
+}
+
+.title {
+    font-family: Lato, sans-serif;
+    font-size: 14px;
+    color: #161819;
+    max-width: 70px;
+}
+div.trainer div.title {
+    max-width: 80px;
+}
+
+.checkbox {
+    position: absolute;
+    right: 8px;
+    width: 15px;
+    height: 15px;
+    margin-top: 3px;
+}
+
+#item {
+    margin: 10px 0 0 5px;
+    border: none;
+    display: flex;
+}
+
+#item:hover {
+    background-color: white;
+}
+
+div.time img.iconClass,
+div.trainer img.iconClass {
+    display: none;
+}
+
+#badge-item {
+    height: 15px;
+    width: 15px;
+    bottom: 30px;
+    position: absolute;
+    z-index: 2;
+    border-radius: 50%;
+    padding: 2px;
+}
+
+.clear-all {
+    min-width: 100px;
+    width: 100%;
+    background-color: white;
+    border: none;
+    height: 47px;
+    margin: 10px 0 0 0;
+    color: #91c7ff;
+    font-family: Lato, sans-serif;
+    font-size: 16px;
+}
+
+.clear-all:hover {
+    background-color: #d8dde6;
+    outline: none;
+}
+.clear-all:focus {
+    outline: none;
+}
