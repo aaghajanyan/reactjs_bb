@@ -48,26 +48,26 @@ class Filter extends React.Component {
                         item,
                         selectValue,
                         labelKey,
-                        valueKey
+                        valueKey,
+                        index
                     }) => {
                         return (
-                            <Fragment>
+                            <Fragment key={item[valueKey]+item[labelKey]}>
                                 <li
                                     className={isSelected ? "selected" : ""}
-                                    key={item[valueKey]}
                                     onClick={() => selectValue(item)}
                                     id="item"
                                 >
                                     <img
                                         className="iconClass"
-                                        src={ this.props.filterData.list[item[valueKey]].iconItemSrc }
+                                        src={ this.props.filterData.list[index].iconItemSrc }
                                     />
                                     <div className="title">
                                         {item[labelKey]}
                                     </div>
-                                    <input className="checkbox" type="checkbox" checked={isSelected}/>
+                                    <input className="checkbox" type="checkbox" checked={isSelected} readOnly/>
                                 </li>
-                                {item.id === this.props.filterData.list.length - 1 && (
+                                {index === this.props.filterData.list.length - 1 && (
                                     <button onClick={this.handleClick} className="clear-all">
                                         {Messages.get('Filter.cleareAll')}
                                     </button>
@@ -83,7 +83,8 @@ class Filter extends React.Component {
 
 Filter.propTypes = {
     filterData: PropTypes.any,
-    className: PropTypes.string
+    className: PropTypes.string,
+    id: PropTypes.string
 };
 
 export { Filter };
