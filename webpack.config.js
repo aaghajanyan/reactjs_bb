@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const configs = require('./src/config').development;
+let envSettings = require('./src/envSettings.json');
 
 const common = {
     entry: './src/index.js',
@@ -41,14 +41,6 @@ const common = {
             {
                 test: /.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot|ico)$/,
                 use: 'url-loader?limit=100000'
-            },
-            {
-                test: /\.(csv|tsv)$/,
-                use: 'csv-loader'
-            },
-            {
-                test: /\.xml$/,
-                use: 'xml-loader'
             }
         ]
     },
@@ -93,21 +85,20 @@ const developmentConfig = {
             errors: true,
             warnings: true
         },
-        port: configs.port
+        port: envSettings.port
     },
     watch: true,
     devtool: 'eval'
 };
 
-
-module.exports = function (env) {
-    if (env === 'production') {
+module.exports = function () {
+    if (process.env.NODE_ENV === 'production') {
         return merge([
             common,
             productionConfig
         ]);
     }
-    if (env === 'development') {
+    if (process.env.NODE_ENV === 'development') {
         return merge([
             common,
             developmentConfig
