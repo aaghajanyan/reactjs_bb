@@ -2,7 +2,7 @@ import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import { Link } from "../reactComponents/Link";
 import { links, NavBarConstants } from "../resources/navbarConstants";
-import classNames from 'classnames';
+import classNames from "classnames";
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -29,9 +29,7 @@ class NavBar extends React.Component {
                 type={item.isBtn}
                 className={item.className}
                 active={item.active}
-                onClick={() => {
-                    console.log("clicked");
-                }}
+                onClick={() => {}}
             >
                 {item.label}
             </Link>

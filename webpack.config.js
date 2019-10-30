@@ -58,6 +58,11 @@ const common = {
 
 const productionConfig = {
     mode: 'production',
+    performance: {
+        hints: false,
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
+    },
     optimization: {
         minimizer: [new UglifyJsPlugin({
             uglifyOptions: {
