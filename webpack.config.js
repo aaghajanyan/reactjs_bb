@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-let envSettings = require('./src/envSettings.json');
+let envSettings = require('./envSettings.json');
 
 const common = {
     entry: './src/index.js',

@@ -25,7 +25,7 @@ $ npm start
 
 # Install guide for production mode.
 ```sh
-$ npm install
+$ npm ci
 $ npm run prod
 ```
 
