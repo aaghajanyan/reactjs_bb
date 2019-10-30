@@ -3,17 +3,19 @@
 ```sh
 .
 ├── build
+│   ├── bundle.js
+│   └── index.html
+├── envSettings.json
 ├── package.json
 ├── package-lock.json
 ├── public
 │   └── index.html
 ├── README.md
+├── server
+│   └── server.prod.js
 ├── src
 │   ├── App.js
-│   ├── envSettings.json
 │   ├── index.js
-│   ├── server
-│   │   └── server.prod.js
 │   └── style.scss
 └── webpack.config.js
 ```
