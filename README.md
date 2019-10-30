@@ -32,4 +32,4 @@ $ npm run prod
 ```
 
 # Note
-> ./src/envSettings.json file should be overwrite with neccassary environment.
+> envSettings.json file should be overwrite with neccassary environment.
