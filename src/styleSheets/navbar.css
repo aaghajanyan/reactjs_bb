@@ -1,47 +1,58 @@
-.flex-container {
-    font-size: 14px;
-    font-weight: 400;
-    height: 70px;
-    padding-bottom: 40px;
+#nav-bar-content {
+    font-size: 13px;
+    height: 80px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+}
+
+#responsive-navbar-nav {
+    flex-grow: 3;
 }
 
 .navbar-light .navbar-toggler {
     z-index: 2;
 }
 
-.navbar-light .navbar-nav .nav-item {
-    color: rgb(22, 24, 25) !important;
+#responsive-navbar-nav .navbar-nav .nav-item {
+    color: rgb(22, 24, 25);
 }
 
-.navbar-light .navbar-nav .nav-item:active,
-.navbar-light .navbar-nav .nav-item:focus {
-    color: #2490ff !important;
+#responsive-navbar-nav .navbar-nav .nav-item:active,
+#responsive-navbar-nav .navbar-nav .nav-item:focus {
+    color: #2490ff;
 }
 
-.left-part {
+.nav-bar-left-items {
     flex-grow: 2.5;
 }
 
-.right-part {
+.nav-bar-right-items {
     flex-grow: 1.5;
     justify-content: flex-end;
 }
 
-.right-part-btn {
+.nav-bar-right-btn {
     flex-grow: 2;
     justify-content: flex-start;
 }
 
-.logo-link {
-    margin-left: 10%;
+.nav-bar-logo {
+    flex-grow: 1;
+    text-align: end;
 }
 
-.logo {
-    height: 70px;
+.nav-bar-logo-img {
+    height: auto;
     width: 120px;
 }
 
-.navbar-btn {
+#responsive-navbar-nav a {
+    padding: 13px 7px;
+}
+
+.nav-bar-btn {
     border-radius: 25px;
     background-color: rgb(36, 144, 255);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px 0px;
@@ -51,13 +62,14 @@
     border: none;
 }
 
-.navbar-btn:hover {
-    transition: box-shadow 0.25s ease 0s, background-color 0.25s ease-out 0s, color 0.25s ease-out 0s;
+.nav-bar-btn:hover {
+    transition: box-shadow 0.25s ease 0s, background-color 0.25s ease-out 0s,
+        color 0.25s ease-out 0s;
     background-color: rgb(0, 96, 167);
     outline: none;
 }
 
-.navbar-btn:focus-within {
+.nav-bar-btn:focus-within {
     outline: none;
 }
 
@@ -70,8 +82,8 @@
 }
 
 @media (max-width: 991px) {
-    .navbar {
-        flex-wrap: nowrap !important;
+    #nav-bar-content {
+        flex-wrap: nowrap;
         height: 60px;
     }
 
@@ -88,10 +100,11 @@
     .link-container {
         font-size: 16px;
         font-family: "Lato", sans-serif;
-        background-color: white;
     }
 
-    .left-part, .right-part, .right-part-btn {
+    .nav-bar-left-items,
+    .nav-bar-right-items,
+    .nav-bar-right-btn {
         margin-left: 20px;
     }
 
@@ -106,22 +119,18 @@
         border-bottom: 1px solid black;
         z-index: 1;
     }
-    
-    .logo-link {
-        margin-left: 38%;
+
+    .nav-bar-logo {
+        text-align: center;
     }
 
-    .logo {
-        height: 100px;
+    .nav-bar-logo-img {
+        height: auto;
         width: 200px;
     }
 
-    .nav-link {
-        padding: 0.8rem 1rem !important;
-    }
-
-    .isClose {
-        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjI4Ij48cGF0aCBkPSJNMTkgNi40MUwxNy41OSA1IDEyIDEwLjU5IDYuNDEgNSA1IDYuNDEgMTAuNTkgMTIgNSAxNy41OSA2LjQxIDE5IDEyIDEzLjQxIDE3LjU5IDE5IDE5IDE3LjU5IDEzLjQxIDEyeiIvPjxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48L3N2Zz4=") !important;
+    #nav-bar-content .isClose {
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjI4Ij48cGF0aCBkPSJNMTkgNi40MUwxNy41OSA1IDEyIDEwLjU5IDYuNDEgNSA1IDYuNDEgMTAuNTkgMTIgNSAxNy41OSA2LjQxIDE5IDEyIDEzLjQxIDE3LjU5IDE5IDE5IDE3LjU5IDEzLjQxIDEyeiIvPjxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48L3N2Zz4=");
         height: 28px;
         width: 28px;
         margin-right: 7px;
@@ -136,7 +145,7 @@
         font-family: "Lato", sans-serif;
     }
 
-    .right-part-btn {
+    .nav-bar-right-btn {
         margin: 0rem auto;
     }
 
@@ -157,32 +166,5 @@
     .login-btn {
         margin: auto 20px;
         font-weight: bold;
-    }
-}
-
-@media (max-width: 900px) {
-    .logo-link {
-        margin-left: 35%;
-    }
-}
-@media (max-width: 800px) {
-    .logo-link {
-        margin-left: 33%;
-    }
-}
-@media (max-width: 670px) {
-    .logo-link {
-        margin-left: 30%;
-    }
-}
-@media (max-width: 550px) {
-    .logo-link {
-        margin-left: 27%;
-    }
-}
-
-@media (max-width: 500px) {
-    .logo-link {
-        margin-left: 25%;
     }
 }
