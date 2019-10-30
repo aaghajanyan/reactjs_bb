@@ -65,9 +65,9 @@ class NavBar extends React.Component {
         ));
 
         return (
-            <Navbar className="flex-container" expand="lg">
-                <Nav.Link className="logo-link" to="#home">
-                    <img className="logo" src={NavBarConstants.logoSrc} />
+            <Navbar id="nav-bar-content" expand="lg">
+                <Nav.Link className="nav-bar-logo" to="#home">
+                    <img className="nav-bar-logo-img" src={NavBarConstants.logoSrc} />
                 </Nav.Link>
                 <Navbar.Toggle
                     onClick={this.changeIcon}
@@ -80,13 +80,13 @@ class NavBar extends React.Component {
                     data-toggle={this.state.classNav}
                     className="mr-auto link-container"
                 >
-                    <Nav className="left-part">
+                    <Nav className="nav-bar-left-items">
                         <Nav>{leftItems}</Nav>
                     </Nav>
                     <hr className="line" />
-                    <Nav className="right-part">{rightItems}</Nav>
+                    <Nav className="nav-bar-right-items">{rightItems}</Nav>
                     <hr className="line" />
-                    <Nav id="auth-btn" className="right-part-btn">
+                    <Nav id="auth-btn" className="nav-bar-right-btn">
                         {rightBtn}
                     </Nav>
                 </Navbar.Collapse>
