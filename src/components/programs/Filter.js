@@ -16,7 +16,6 @@ class Filter extends React.Component {
     }
 
     selectMultipleOption(value) {
-        console.log("Val: ", value);
         this.setState({ arrayValue: value });
     }
 
@@ -69,7 +68,7 @@ class Filter extends React.Component {
                                 </li>
                                 {item.id === this.props.filterData.list.length - 1 && (
                                     <button onClick={this.handleClick} className="clear-all">
-                                        {Messages.get('Filter.cleareAll')}
+                                        {Messages.get("Filter.cleareAll")}
                                     </button>
                                 )}
                             </Fragment>

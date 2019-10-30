@@ -41,7 +41,7 @@ class ImageCarousel extends React.Component {
             <div className="images-container">
                 <a href={imageListBySize[index].href}>
                     <img
-                        className="image-item"
+                        className="images-container__image-item"
                         src={imageListBySize[index].imageSrc}
                     />
                 </a>

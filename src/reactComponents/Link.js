@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import { Nav } from 'react-bootstrap';
+import React from "react";
+import PropTypes from "prop-types";
+import classNames from "classnames";
+import { Nav } from "react-bootstrap";
 
 const Link = ({
   children, onClick, className, disabled, active, ...attrs
@@ -19,7 +19,7 @@ const Link = ({
     { active },
   );
 
-  const modifiedChildren = attrs.type === "true" ? <button className="nav-bar-btn"> {children} </button> : children;
+  const modifiedChildren = attrs.type === "true" ? <button className="nav-bar__btn"> {children} </button> : children;
 
   return (
     <Nav.Link
@@ -43,9 +43,9 @@ Link.propTypes = {
 };
 
 Link.defaultProps = {
-  children: 'Item',
+  children: "Item",
   onClick: () => {},
-  className: '',
+  className: "",
   disabled: false,
   active: false,
 };

@@ -1,7 +1,7 @@
-let messages = require('./en.messages');
+let messages = require("./en.messages");
 
 messages.get = function (path) {
-    let pathParts = path.split('.');
+    let pathParts = path.split(".");
     let message;
 
     try {
@@ -10,7 +10,7 @@ messages.get = function (path) {
         }, messages);
     } finally {
         if (message === undefined) {
-            throw new ReferenceError('Could not find message: ' + path);
+            throw new ReferenceError("Could not find message: " + path);
         }
     }
 

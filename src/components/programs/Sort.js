@@ -1,6 +1,6 @@
-import 'react-picky/dist/picky.css';
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+import "react-picky/dist/picky.css";
+import React, { Fragment } from "react";
+import PropTypes from "prop-types";
 import  Messages  from "../../constants/Messages";
 
 class Sort extends React.Component {
@@ -12,7 +12,7 @@ class Sort extends React.Component {
         });
         return (
             <Fragment>
-                <span className="sort-by"> {Messages.get('Programs.sortBy')} </span>
+                <span className="sort-by"> {Messages.get("Programs.sortBy")} </span>
                 <ul> {sortTypeList} </ul>
             </Fragment>
         );
