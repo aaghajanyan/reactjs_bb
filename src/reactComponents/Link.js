@@ -19,7 +19,7 @@ const Link = ({
     { active },
   );
 
-  const modifiedChildren = attrs.type === "true" ? <button className="navbar-btn"> {children} </button> : children;
+  const modifiedChildren = attrs.type === "true" ? <button className="nav-bar-btn"> {children} </button> : children;
 
   return (
     <Nav.Link

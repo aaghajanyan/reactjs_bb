@@ -67,7 +67,7 @@ div.trainer > button.picky__input:before {
     content: "Trainer";
 }
 button.picky__input:after {
-    content: url("../assets/icons8-expand-arrow-32.png");
+    content: url("../assets/icon-arrow.png");
 }
 
 .picky__dropdown {
