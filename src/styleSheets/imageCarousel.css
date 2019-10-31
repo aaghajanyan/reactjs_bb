@@ -1,5 +1,6 @@
 .images-container {
     text-align: center;
+    overflow: hidden;
   }
   
   .images-container__image-item {

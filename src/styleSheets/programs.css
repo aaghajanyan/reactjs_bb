@@ -16,3 +16,8 @@
     text-align: center;
     max-width: 1024px;
 }
+
+.programs-container__programs-card {
+    display: flex;
+    justify-content: center;
+}

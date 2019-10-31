@@ -4,6 +4,8 @@ import { getLevelData, getTypeData, getTimeData, getTrainerData } from "../../ut
 import { sortTypes } from "../../resources/sortTypes";
 import { Sort } from "./Sort";
 import  Messages  from "../../constants/Messages";
+import { ProgramCardDeck } from "./ProgramCardDeck";
+import { programData } from "../../resources/programsData";
 
 class Programs extends React.Component {
     render() {
@@ -18,6 +20,9 @@ class Programs extends React.Component {
                 </div>
                 <div className="programs-container__sort-container">
                     <Sort slassName="programs-container__sort-list" sortTypes={sortTypes} />
+                </div>
+                <div className="programs-container__programs-card">
+                    <ProgramCardDeck programData={programData.data.allItems}/>
                 </div>
             </div>
         );
