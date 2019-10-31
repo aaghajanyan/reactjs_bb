@@ -27,47 +27,36 @@ class Filter extends React.Component {
 
     render() {
         return (
-            <div className="main-container">
-                <img className="mainIcon" src={this.props.filterData.iconSrc} />
+            <div className="filter-container">
+                <img className="filter-container__icon" src={this.props.filterData.iconSrc} />
                 {this.state.arrayValue.length > 0 && (
                     <Badge id="badge-item" variant="primary">
                         {this.state.arrayValue.length}
                     </Badge>
                 )}
                 <Picky
-                    className={this.props.className}
-                    value={this.state.arrayValue}
-                    options={this.props.filterData.list}
-                    onChange={this.selectMultipleOption}
-                    valueKey="id"
-                    labelKey="name"
-                    multiple={true}
-                    render={({
-                        isSelected,
-                        item,
-                        selectValue,
-                        labelKey,
-                        valueKey
+                    className={this.props.className} value={this.state.arrayValue} options={this.props.filterData.list}
+                    onChange={this.selectMultipleOption} valueKey="id" labelKey="name" multiple={true}
+                    render={({ isSelected, item, selectValue, labelKey, valueKey
                     }) => {
                         return (
                             <Fragment>
                                 <li
-                                    className={isSelected ? "selected" : ""}
+                                    className={isSelected ? "filter-container__item selected" : "filter-container__item "}
                                     key={item[valueKey]}
                                     onClick={() => selectValue(item)}
-                                    id="item"
                                 >
                                     <img
-                                        className="iconClass"
+                                        className="filter-container__item-icon"
                                         src={ this.props.filterData.list[item[valueKey]].iconItemSrc }
                                     />
-                                    <div className="title center">
+                                    <div className="filter-container__item-title">
                                         {item[labelKey]}
                                     </div>
-                                    <input className="checkbox" type="checkbox" checked={isSelected}/>
+                                    <input className="filter-container__checkbox" type="checkbox" checked={isSelected}/>
                                 </li>
                                 {item.id === this.props.filterData.list.length - 1 && (
-                                    <button onClick={this.handleClick} className="clear-all">
+                                    <button onClick={this.handleClick} className="filter-container__clear-all-btn">
                                         {Messages.get("Filter.cleareAll")}
                                     </button>
                                 )}
