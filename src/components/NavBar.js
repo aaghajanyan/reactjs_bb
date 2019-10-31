@@ -2,6 +2,7 @@ import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import { Link } from "../reactComponents/Link";
 import { links, NavBarConstants } from "../resources/navbarConstants";
+import classNames from "classnames";
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -16,81 +17,55 @@ class NavBar extends React.Component {
     changeIcon() {
         this.setState({
             isOpened: !this.state.isOpened,
-            iconClassName: this.state.isOpened ? "" : "isClose"
+            iconClassName: this.state.isOpened ? " " : "nav-bar__toggle-close-btn"
         });
     }
 
-    render() {
-        const leftItems = links.leftPart.map(item => (
+    getLinkItems(itemsList) {
+        const items = itemsList.map(item => (
             <Link
                 key={item.label}
                 href={item.link}
                 type={item.isBtn}
                 className={item.className}
                 active={item.active}
-                onClick={() => {
-                    console.log("clicked");
-                }}
+                onClick={() => {}}
             >
                 {item.label}
             </Link>
         ));
-
-        const rightItems = links.rightPart.map(item => (
-            <Link
-                key={item.label}
-                href={item.link}
-                type={item.isBtn}
-                className={item.className}
-                onClick={() => {
-                    console.log("clicked");
-                }}
-            >
-                {item.label}
-            </Link>
-        ));
-
-        const rightBtn = links.rightPartBtn.map(item => (
-            <Link
-                key={item.label}
-                href={item.link}
-                type={item.isBtn}
-                className={item.className}
-                onClick={() => {
-                    console.log("clicked");
-                }}
-            >
-                {item.label}
-            </Link>
-        ));
-
+        return items;
+    }
+    render() {
+        const classes = classNames(
+            "nav-bar__toggle-btn",
+            this.state.iconClassName,
+          );
+          const leftItems = this.getLinkItems(links.leftPart);
+          const rightItems = this.getLinkItems(links.rightPart);
+          const rightBtn = this.getLinkItems(links.rightPartBtn);
+          
         return (
-            <Navbar className="flex-container" expand="lg">
-                <Nav.Link className="logo-link" to="#home">
-                    <img className="logo" src={NavBarConstants.logoSrc} />
-                </Nav.Link>
-                <Navbar.Toggle
-                    onClick={this.changeIcon}
-                    aria-controls="responsive-navbar-nav"
-                    className={this.state.iconClassName}
-                    id="toggle-btn"
-                />
-                <Navbar.Collapse
-                    id="responsive-navbar-nav"
-                    data-toggle={this.state.classNav}
-                    className="mr-auto link-container"
-                >
-                    <Nav className="left-part">
-                        <Nav>{leftItems}</Nav>
-                    </Nav>
-                    <hr className="line" />
-                    <Nav className="right-part">{rightItems}</Nav>
-                    <hr className="line" />
-                    <Nav id="auth-btn" className="right-part-btn">
-                        {rightBtn}
-                    </Nav>
-                </Navbar.Collapse>
-            </Navbar>
+            <div className="nav-bar h">
+                <Navbar className="header__nav-bar" expand="lg">
+                    <Nav.Link className="nav-bar__logo" to="#home">
+                        <img className="nav-bar__logo-img" src={NavBarConstants.logoSrc} />
+                    </Nav.Link>
+                    <Navbar.Toggle onClick={this.changeIcon} className={classes}/>
+                    <Navbar.Collapse className="mr-auto nav-bar__nav-bar-collapse">
+                        <Nav className="nav-bar__items nav-bar__left-items ">
+                            <Nav>{leftItems}</Nav>
+                        </Nav>
+                        <hr className="nav-bar__line" />
+                        <Nav className="nav-bar__items nav-bar__right-items">
+                            {rightItems}
+                            <hr className="nav-bar__line" />
+                            <Nav className="nav-bar__items nav-bar__nav-bar-btn"> {rightBtn} </Nav>
+                        </Nav>
+
+                    </Navbar.Collapse>
+                </Navbar>
+            </div>
         );
     }
 }

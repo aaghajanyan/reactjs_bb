@@ -4,9 +4,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+let envSettings = require('./src/envSettings.json');
 
 const common = {
-    mode: 'production',
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'build'),
@@ -41,14 +41,6 @@ const common = {
             {
                 test: /.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot|ico)$/,
                 use: 'url-loader?limit=100000'
-            },
-            {
-                test: /\.(csv|tsv)$/,
-                use: 'csv-loader'
-            },
-            {
-                test: /\.xml$/,
-                use: 'xml-loader'
             }
         ]
     },
@@ -61,26 +53,36 @@ const common = {
             template: path.resolve('./public/index.html')
         }),
         new webpack.optimize.OccurrenceOrderPlugin(),
-    ],
+    ]
+};
+
+const productionConfig = {
+    mode: 'production',
+    performance: {
+        hints: false,
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
+    },
     optimization: {
         minimizer: [new UglifyJsPlugin({
             uglifyOptions: {
-              warnings: false,
-              parse: {},
-              compress: {},
-              mangle: true,
-              output: null,
-              toplevel: false,
-              nameCache: null,
-              ie8: false,
-              keep_fnames: false,
+                warnings: false,
+                parse: {},
+                compress: {},
+                mangle: true,
+                output: null,
+                toplevel: false,
+                nameCache: null,
+                ie8: false,
+                keep_fnames: false,
             },
           }),
         ],
-      },
+    }
 };
 
 const developmentConfig = {
+    mode: 'development',
     devServer: {
         contentBase: './build',
         stats: 'errors-only',
@@ -88,17 +90,20 @@ const developmentConfig = {
             errors: true,
             warnings: true
         },
-        port: 3002
+        port: envSettings.port
     },
     watch: true,
     devtool: 'eval'
 };
 
-module.exports = function (env) {
-    if (env === 'production') {
-        return common;
+module.exports = function () {
+    if (process.env.NODE_ENV === 'production') {
+        return merge([
+            common,
+            productionConfig
+        ]);
     }
-    if (env === 'development') {
+    if (process.env.NODE_ENV === 'development') {
         return merge([
             common,
             developmentConfig

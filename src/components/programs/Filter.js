@@ -16,7 +16,6 @@ class Filter extends React.Component {
     }
 
     selectMultipleOption(value) {
-        console.log("Val: ", value);
         this.setState({ arrayValue: value });
     }
 
@@ -28,48 +27,37 @@ class Filter extends React.Component {
 
     render() {
         return (
-            <div className="main-container">
-                <img className="mainIcon" src={this.props.filterData.iconSrc} />
+            <div className="filter-container">
+                <img className="filter-container__icon" src={this.props.filterData.iconSrc} />
                 {this.state.arrayValue.length > 0 && (
                     <Badge id="badge-item" variant="primary">
                         {this.state.arrayValue.length}
                     </Badge>
                 )}
                 <Picky
-                    className={this.props.className}
-                    value={this.state.arrayValue}
-                    options={this.props.filterData.list}
-                    onChange={this.selectMultipleOption}
-                    valueKey="id"
-                    labelKey="name"
-                    multiple={true}
-                    render={({
-                        isSelected,
-                        item,
-                        selectValue,
-                        labelKey,
-                        valueKey,
-                        index
+                    className={this.props.className} value={this.state.arrayValue} options={this.props.filterData.list}
+                    onChange={this.selectMultipleOption} valueKey="id" labelKey="name" multiple={true}
+                    render={({ isSelected, item, selectValue, labelKey, valueKey
                     }) => {
                         return (
-                            <Fragment key={item[valueKey]+item[labelKey]}>
+                            <Fragment>
                                 <li
-                                    className={isSelected ? "selected" : ""}
+                                    className={isSelected ? "filter-container__item selected" : "filter-container__item "}
+                                    key={item[valueKey]}
                                     onClick={() => selectValue(item)}
-                                    id="item"
                                 >
                                     <img
-                                        className="iconClass"
-                                        src={ this.props.filterData.list[index].iconItemSrc }
+                                        className="filter-container__item-icon"
+                                        src={ this.props.filterData.list[item[valueKey]].iconItemSrc }
                                     />
-                                    <div className="title">
+                                    <div className="filter-container__item-title">
                                         {item[labelKey]}
                                     </div>
-                                    <input className="checkbox" type="checkbox" checked={isSelected} readOnly/>
+                                    <input className="filter-container__checkbox" type="checkbox" checked={isSelected}/>
                                 </li>
-                                {index === this.props.filterData.list.length - 1 && (
-                                    <button onClick={this.handleClick} className="clear-all">
-                                        {Messages.get('Filter.cleareAll')}
+                                {item.id === this.props.filterData.list.length - 1 && (
+                                    <button onClick={this.handleClick} className="filter-container__clear-all-btn">
+                                        {Messages.get("Filter.cleareAll")}
                                     </button>
                                 )}
                             </Fragment>
@@ -84,7 +72,6 @@ class Filter extends React.Component {
 Filter.propTypes = {
     filterData: PropTypes.any,
     className: PropTypes.string,
-    id: PropTypes.string
 };
 
 export { Filter };

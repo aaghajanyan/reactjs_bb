@@ -9,15 +9,15 @@ class Programs extends React.Component {
     render() {
         return (
             <div className="programs-container">
-                <h1 className="program-title">{Messages.get('Programs.title')}</h1>
-                <div className="filterContainer">
-                    <Filter className="filterItem level" filterData={getLevelData()}/>
-                    <Filter className="filterItem time" filterData={getTimeData()} />
-                    <Filter className="filterItem type" filterData={getTypeData()} />
-                    <Filter className="filterItem trainer" filterData={getTrainerData()} />
+                <h1 className="programs-container__program-title">{Messages.get("Programs.title")}</h1>
+                <div className="programs-container__filter-container">
+                    <Filter className="programs-container__level" filterData={getLevelData()}/>
+                    <Filter className="programs-container__time" filterData={getTimeData()} />
+                    <Filter className="programs-container__type" filterData={getTypeData()} />
+                    <Filter className="programs-container__trainer" filterData={getTrainerData()} />
                 </div>
-                <div className="sortContainer">
-                    <Sort slassName="sort-list" sortTypes={sortTypes} />
+                <div className="programs-container__sort-container">
+                    <Sort slassName="programs-container__sort-list" sortTypes={sortTypes} />
                 </div>
             </div>
         );

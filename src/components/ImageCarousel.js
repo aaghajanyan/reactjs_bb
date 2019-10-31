@@ -38,10 +38,10 @@ class ImageCarousel extends React.Component {
                 
         let index = getRandomIndex(imageListBySize.length - 1);
         return (
-            <div className="image-container">
+            <div className="images-container">
                 <a href={imageListBySize[index].href}>
                     <img
-                        className="image-item"
+                        className="images-container__image-item"
                         src={imageListBySize[index].imageSrc}
                     />
                 </a>

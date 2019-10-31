@@ -1,10 +1,12 @@
 let messages = {
     Programs: {
-        'title': 'WORKOUT PROGRAMS',
-        'sortBy': 'Sort by:'
+        "title": "WORKOUT PROGRAMS",
+        "sortBy": "Sort by:"
     },
     Filter: {
-        'cleareAll': 'Clear All'
+        "cleareAll": "Clear All",
+        "title": "WORKOUT PROGRAMS",
+        "sortBy": "Sort by:"
     }
 };
 
