@@ -1,0 +1,35 @@
+.additional-info-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.additional-info-container__suppliers-content {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0 90px 0;
+}
+
+.additional-info-container__suppliers {
+    font-size: 13px;
+    color: #91c7ff;
+    text-align: start;
+    margin: 5px 0;
+}
+
+@media (max-width: 640px) {
+    .additional-info-container {
+        flex-direction: column;
+        align-items: center;
+        margin: auto 15px auto 15px;
+    }
+    .additional-info-container__language-level {
+        text-align: start;
+    }
+    .additional-info-container__language-content {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+        font-family: Lato, sans-serif;
+    }
+}

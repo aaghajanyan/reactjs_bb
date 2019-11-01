@@ -68,7 +68,7 @@ div.programs-container__trainer > button.picky__input:before {
     content: "Trainer";
 }
 button.picky__input:after {
-    content: url("../assets/icon-arrow.png"); /* not working */
+    /* content: url("../assets/icon-arrow.png"); not working */
 }
 
 .picky__dropdown {

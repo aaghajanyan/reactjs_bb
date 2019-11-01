@@ -7,6 +7,9 @@ let messages = {
         "cleareAll": "Clear All",
         "title": "WORKOUT PROGRAMS",
         "sortBy": "Sort by:"
+    },
+    App: {
+        "feedback": "FeedBack"
     }
 };
 

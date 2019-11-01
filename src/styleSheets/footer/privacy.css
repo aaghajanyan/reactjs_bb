@@ -1,0 +1,19 @@
+.privacy-container {
+    padding: 30px 20px 30px 0;
+    max-width: 750px;
+}
+
+.privacy-container__text-item {
+    margin-bottom: 17px;
+    text-align: left;
+    font-size: 9px;
+}
+
+@media (max-width: 635px) {
+    .privacy-container {
+        padding: 30px;
+    }
+    .privacy-container__text-item {
+        text-align: center;
+    }
+}
