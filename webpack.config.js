@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const merge = require('webpack-merge');
-const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 let envSettings = require('./envSettings.json');
 
@@ -34,7 +33,7 @@ const common = {
                 loader: 'file-loader',
                 options: {
                     name: '[name].[ext]',
-                    outputPath: 'images/',
+                    outputPath: '/images/',
                     publicPath: '/src/assets/'
                 }
             },
@@ -51,8 +50,7 @@ const common = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: path.resolve('./public/index.html')
-        }),
-        new webpack.optimize.OccurrenceOrderPlugin(),
+        })
     ]
 };
 
@@ -61,15 +59,8 @@ const productionConfig = {
     optimization: {
         minimizer: [new UglifyJsPlugin({
             uglifyOptions: {
-                warnings: false,
-                parse: {},
                 compress: {},
                 mangle: true,
-                output: null,
-                toplevel: false,
-                nameCache: null,
-                ie8: false,
-                keep_fnames: false,
             },
           }),
         ],
@@ -79,16 +70,15 @@ const productionConfig = {
 const developmentConfig = {
     mode: 'development',
     devServer: {
-        contentBase: './build',
-        stats: 'errors-only',
+        contentBase: ('./'),
+        stats: 'errors-warnings',
         overlay: {
             errors: true,
             warnings: true
         },
         port: envSettings.port
     },
-    watch: true,
-    devtool: 'eval'
+    watch: true
 };
 
 module.exports = function () {
