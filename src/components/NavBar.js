@@ -46,7 +46,7 @@ class NavBar extends React.Component {
           const rightBtn = this.getLinkItems(links.rightPartBtn);
           
         return (
-            <div className="nav-bar h">
+            <div className="nav-bar">
                 <Navbar className="header__nav-bar" expand="lg">
                     <Nav.Link className="nav-bar__logo" to="#home">
                         <img className="nav-bar__logo-img" src={NavBarConstants.logoSrc} />
