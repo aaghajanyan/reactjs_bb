@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
-const BUILD_PATH = '../../build';
+const BUILD_PATH = '../build';
 const FILE_NAME = 'index.html';
 const DIST_DIR = path.join(__dirname, BUILD_PATH);
 let envSettings = require('../envSettings.json');
