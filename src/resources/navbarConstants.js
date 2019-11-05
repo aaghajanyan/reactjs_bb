@@ -13,9 +13,6 @@ export const navBarItems = {
     authNav: [
         { label: "JOIN NOW", link: "#joinNow", isBtn: "true", className: "nav-bar__link-item nav-bar__btn-item nav-bar__signup-btn" },
         { label: "LOG IN", link: "#login", isBtn: "false", className: "nav-bar__link-item nav-bar__btn-item nav-bar__login-btn" }
-    ]
-};
-
-export const navBarConstants = {
+    ],
     logoSrc: "https://www.thejoyplan.com/wp-content/uploads/2017/07/beachbody.png"
-}
+};

@@ -6,23 +6,20 @@ import classNames from "classnames";
 
 class NavBar extends React.Component {
     static propTypes = {
-        navBarItems: PropTypes.any,
-        navBarConstants: PropTypes.any
+        navBarItems: PropTypes.object
     }
 
     constructor(props) {
         super(props);
         this.state = {
-            isOpened: false,
-            iconClassName: ""
+            isOpened: false
         };
         this.changeIcon = this.changeIcon.bind(this);
     }
 
     changeIcon() {
         this.setState({
-            isOpened: !this.state.isOpened,
-            iconClassName: this.state.isOpened ? " " : "nav-bar__toggle-close-btn"
+            isOpened: !this.state.isOpened
         });
     }
 
@@ -41,11 +38,12 @@ class NavBar extends React.Component {
         return items;
     }
     render() {
-        const { navBarItems, navBarConstants } = this.props
+        const closeBtnClassName = this.state.isOpened ? "nav-bar__toggle-close-btn" : " ";
         const classes = classNames(
             "nav-bar__toggle-btn",
-            this.state.iconClassName,
+            closeBtnClassName,
         );
+        const { navBarItems } = this.props
         const primaryNav = this.getLinkItems(navBarItems.primaryNav);
         const secondaryNav = this.getLinkItems(navBarItems.secondaryNav);
         const authNav = this.getLinkItems(navBarItems.authNav);
@@ -54,7 +52,7 @@ class NavBar extends React.Component {
             <div className="nav-bar">
                 <Navbar className="header__nav-bar" expand="lg">
                     <Nav.Link className="nav-bar__logo" to="#home">
-                        <img className="nav-bar__logo-img" src={navBarConstants.logoSrc} />
+                        <img className="nav-bar__logo-img" src={navBarItems.logoSrc} />
                     </Nav.Link>
                     <Navbar.Toggle onClick={this.changeIcon} className={classes}/>
                     <Navbar.Collapse className="mr-auto nav-bar__nav-bar-collapse">

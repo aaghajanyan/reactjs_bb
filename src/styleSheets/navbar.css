@@ -142,8 +142,9 @@
     }
 
     .nav-bar__line {
+        width: 350px;
+        margin-left: -20px;
         display: block;
-        width: 100%;
         color: rgb(189, 189, 189);
     }
 
