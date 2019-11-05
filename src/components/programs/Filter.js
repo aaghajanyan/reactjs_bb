@@ -40,7 +40,7 @@ class Filter extends React.Component {
                     render={({ isSelected, item, selectValue, labelKey, valueKey
                     }) => {
                         return (
-                            <Fragment>
+                            <Fragment key={item[valueKey]}>
                                 <li
                                     className={isSelected ? "filter-container__item selected" : "filter-container__item "}
                                     key={item[valueKey]}
@@ -53,7 +53,7 @@ class Filter extends React.Component {
                                     <div className="filter-container__item-title">
                                         {item[labelKey]}
                                     </div>
-                                    <input className="filter-container__checkbox" type="checkbox" checked={isSelected}/>
+                                    <input className="filter-container__checkbox" type="checkbox" checked={isSelected} readOnly/>
                                 </li>
                                 {item.id === this.props.filterData.list.length - 1 && (
                                     <button onClick={this.handleClick} className="filter-container__clear-all-btn">

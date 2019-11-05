@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const merge = require('webpack-merge');
-const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 let envSettings = require('./src/envSettings.json');
 
@@ -34,13 +33,13 @@ const common = {
                 loader: 'file-loader',
                 options: {
                     name: '[name].[ext]',
-                    outputPath: 'images/',
+                    outputPath: '/images/',
                     publicPath: '/src/assets/'
                 }
             },
             {
                 test: /.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot|ico)$/,
-                use: 'url-loader?limit=100000'
+                use: 'url-loader?limit=10000'
             }
         ]
     },
@@ -51,8 +50,7 @@ const common = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: path.resolve('./public/index.html')
-        }),
-        new webpack.optimize.OccurrenceOrderPlugin(),
+        })
     ]
 };
 
@@ -64,17 +62,11 @@ const productionConfig = {
         maxAssetSize: 512000
     },
     optimization: {
+        minimize: true,
         minimizer: [new UglifyJsPlugin({
             uglifyOptions: {
-                warnings: false,
-                parse: {},
                 compress: {},
                 mangle: true,
-                output: null,
-                toplevel: false,
-                nameCache: null,
-                ie8: false,
-                keep_fnames: false,
             },
           }),
         ],
@@ -84,8 +76,8 @@ const productionConfig = {
 const developmentConfig = {
     mode: 'development',
     devServer: {
-        contentBase: './build',
-        stats: 'errors-only',
+        contentBase: ('./'),
+        stats: 'errors-warnings',
         overlay: {
             errors: true,
             warnings: true
@@ -93,7 +85,7 @@ const developmentConfig = {
         port: envSettings.port
     },
     watch: true,
-    devtool: 'eval'
+    devtool: 'inline-source-map'
 };
 
 module.exports = function () {
