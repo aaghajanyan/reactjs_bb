@@ -30,7 +30,6 @@ class NavBar extends React.Component {
             <Nav.Link
                 key={item.label}
                 href={item.link}
-                type={item.isBtn}
                 className={item.className}
                 active={item.active}
             >
