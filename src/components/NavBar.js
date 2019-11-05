@@ -1,6 +1,5 @@
 import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
-import { Link } from "../reactComponents/Link";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
@@ -25,18 +24,20 @@ class NavBar extends React.Component {
 
     getLinkItems(itemsList) {
         const items = itemsList.map(item => (
-            <Link
+            <Nav.Link
                 key={item.label}
                 href={item.link}
                 type={item.isBtn}
                 className={item.className}
                 active={item.active}
             >
-                {item.label}
-            </Link>
+               {item.isBtn ? <button className="nav-bar__btn"> {item.label} </button> : item.label}
+            </Nav.Link>
         ));
+
         return items;
     }
+
     render() {
         const closeBtnClassName = this.state.isOpened ? "nav-bar__toggle-close-btn" : " ";
         const classes = classNames(
