@@ -3,51 +3,39 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import { Nav } from "react-bootstrap";
 
-const Link = ({
-  children, onClick, className, disabled, active, ...attrs
-}) => {
-  const onClickAction = e => {
-    if (disabled) {
-      e.preventDefault();
-    } else {
-      return onClick(e);
-    }
+class Link extends React.Component {
+
+  static propTypes = {
+    modifiedChildren: PropTypes.node,
+    children: PropTypes.node,
+    className: PropTypes.string,
+    active: PropTypes.bool,
   };
 
-  const classes = classNames(
-    className,
-    { active },
-  );
+  static defaultProps = {
+    children: "",
+    className: "",
+    active: false,
+  };
 
-  const modifiedChildren = attrs.type === "true" ? <button className="nav-bar__btn"> {children} </button> : children;
+  render() {
+    const { children, className, active, ...attrs } = this.props;
+    let classes = classNames(
+      className,
+      { active },
+    );
+  
+    const modifiedChildren = attrs.type === "true" ? <button className="nav-bar__btn"> {children} </button> : children;
 
-  return (
-    <Nav.Link
-      className={classes}
-      disabled={disabled}
-      onClick={onClickAction}
-      {...attrs}
-    >
-      {modifiedChildren}
-    </Nav.Link>
-  );
-};
-
-Link.propTypes = {
-  modifiedChildren: PropTypes.node,
-  children: PropTypes.node,
-  onClick: PropTypes.func,
-  className: PropTypes.string,
-  disabled: PropTypes.bool,
-  active: PropTypes.bool,
-};
-
-Link.defaultProps = {
-  children: "Item",
-  onClick: () => {},
-  className: "",
-  disabled: false,
-  active: false,
-};
+    return (
+      <Nav.Link
+        className={classes}
+        {...attrs}
+      >
+        {modifiedChildren}
+      </Nav.Link>
+    );
+  }
+}
 
 export { Link };

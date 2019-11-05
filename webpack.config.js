@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const merge = require('webpack-merge');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-let envSettings = require('./envSettings.json');
+const envSettings = require('./envSettings.json');
 
 const common = {
     entry: './src/index.js',
@@ -39,7 +39,7 @@ const common = {
             },
             {
                 test: /.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot|ico)$/,
-                use: 'url-loader?limit=100000'
+                use: 'url-loader?limit=10000'
             }
         ]
     },
@@ -62,6 +62,7 @@ const productionConfig = {
         maxAssetSize: 512000
     },
     optimization: {
+        minimize: true,
         minimizer: [new UglifyJsPlugin({
             uglifyOptions: {
                 compress: {},
