@@ -17,9 +17,12 @@ class NavBar extends React.Component {
     }
 
     changeIcon() {
-        this.setState({
-            isOpened: !this.state.isOpened
-        });
+        const waitingTime =  this.state.isOpened ? 300 : 0;
+        setTimeout(() => {
+            this.setState({
+                isOpened: !this.state.isOpened
+            });
+        }, waitingTime);
     }
 
     getLinkItems(itemsList) {
@@ -39,6 +42,7 @@ class NavBar extends React.Component {
     }
 
     render() {
+        
         const closeBtnClassName = this.state.isOpened ? "nav-bar__toggle-close-btn" : " ";
         const classes = classNames(
             "nav-bar__toggle-btn",
