@@ -3,7 +3,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import  Messages  from "../../constants/Messages";
 
-class SortForTablet extends React.Component {
+class SortTabletMode extends React.Component {
+    static propTypes = {
+        sortTypes: PropTypes.any,
+        isCloseClicked: PropTypes.func
+    };
+
     render() {
         const sortTypeList = this.props.sortTypes.map((element, index) => {
             let activeClass = (index === 0) ? "sort-list__item__tablet active__tablet" : "sort-list__item__tablet";
@@ -19,9 +24,4 @@ class SortForTablet extends React.Component {
     }
 }
 
-SortForTablet.propTypes = {
-    sortTypes: PropTypes.any,
-    isCloseClicked: PropTypes.func
-};
-
-export { SortForTablet };
+export { SortTabletMode };

@@ -1,7 +1,7 @@
 import "react-picky/dist/picky.css";
 import React from "react";
 import PropTypes from "prop-types";
-import { SortForTablet } from "./SortTabletMode";
+import { SortTabletMode } from "./SortTabletMode";
 import { sortTypes } from "../../resources/sortTypes";
 
 class FilterSortTabletMode extends React.Component {
@@ -52,7 +52,7 @@ class FilterSortTabletMode extends React.Component {
         return (
             <div className="filterSort-container">
                 {filterSortList}
-                { this.state.hideSort && <SortForTablet sortTypes={sortTypes} isCloseClicked={this.isCloseClicked}/> }
+                { this.state.hideSort && <SortTabletMode sortTypes={sortTypes} isCloseClicked={this.isCloseClicked}/> }
             </div>
         );
     }
