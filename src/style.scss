@@ -13,9 +13,11 @@
 @import "./styleSheets/footer/dropdownComponent.css";
 @import "./styleSheets/footer/additionalInfo.css";
 @import "./styleSheets/button.css";
-@import "./styleSheets/programs/filterSortForTablet";
+@import "./styleSheets/programs/filterSortTabletMode";
+@import "./styleSheets/programs/sortTabletMode.css";
 
 body {
     font-family: Lato, sans-serif;
     background-color: #f7f8fa;
+    position: relative;
 }

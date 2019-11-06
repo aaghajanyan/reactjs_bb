@@ -10,7 +10,10 @@ let messages = {
     },
     App: {
         "feedback": "FeedBack"
-    }
+    },
+    SortTabletMode: {
+        "sortBy": "Sort by"
+    },
 };
 
 module.exports = messages;

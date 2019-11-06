@@ -5,7 +5,7 @@ import { getLevelData, getTypeData, getTimeData, getTrainerData } from "../../ut
 import { sortTypes } from "../../resources/sortTypes";
 import { Sort } from "./Sort";
 
-class FilterSortForDesktop extends React.Component {
+class FilterSortDesktopMode extends React.Component {
     render() {
         return (
             <div>
@@ -23,4 +23,4 @@ class FilterSortForDesktop extends React.Component {
     }
 }
 
-export { FilterSortForDesktop };
+export { FilterSortDesktopMode };

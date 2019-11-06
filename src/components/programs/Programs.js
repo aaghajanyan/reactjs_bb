@@ -2,9 +2,10 @@ import React from "react";
 import  Messages  from "../../constants/Messages";
 import { ProgramCardDeck } from "./ProgramCardDeck";
 import { programData } from "../../resources/programsData";
-import { FilterSortForTablet } from "./FilterSortForTablet";
+
+import { FilterSortTabletMode } from "./FilterSortTabletMode"
 import { filterSortNames } from "../../resources/filterSort";
-import { FilterSortForDesktop } from "./FilterSortForDesktop";
+import { FilterSortDesktopMode } from "./FilterSortDesktopMode";
 
 class Programs extends React.Component {
     constructor(props) {
@@ -36,7 +37,7 @@ class Programs extends React.Component {
         return (
             <div className="programs-container">
                 <h1 className="programs-container__program-title">{Messages.get("Programs.title")}</h1>
-                { show ? <FilterSortForDesktop /> : <FilterSortForTablet filterSortNames={filterSortNames}/> }
+                { show ? <FilterSortDesktopMode /> : <FilterSortTabletMode filterSortNames={filterSortNames}/> }
                 <div className="programs-container__programs-card">
                     <ProgramCardDeck programData={programData.data.allItems}/>
                 </div>
