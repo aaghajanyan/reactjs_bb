@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const merge = require('webpack-merge');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-let envSettings = require('./envSettings.json');
+const envSettings = require('./envSettings.json');
 
 const common = {
     entry: './src/index.js',
@@ -28,19 +28,9 @@ const common = {
                 use: [ 'style-loader', 'css-loader', 'sass-loader' ]
             },
             {
-                test: /\.(eot|woff|woff2|ttf|svg|png|jpe?g|gif|ico)(\?\S*)?$/,
-                exclude: /node_modules/,
-                loader: 'file-loader',
-                options: {
-                    name: '[name].[ext]',
-                    outputPath: '/images/',
-                    publicPath: '/src/assets/'
-                }
-            },
-            {
                 test: /.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot|ico)$/,
-                use: 'url-loader?limit=100000'
-            }
+                use: 'url-loader?limit=10000',
+            },
         ]
     },
     resolve: {
@@ -56,7 +46,13 @@ const common = {
 
 const productionConfig = {
     mode: 'production',
+    performance: {
+        hints: false,
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
+    },
     optimization: {
+        minimize: true,
         minimizer: [new UglifyJsPlugin({
             uglifyOptions: {
                 compress: {},
@@ -70,7 +66,7 @@ const productionConfig = {
 const developmentConfig = {
     mode: 'development',
     devServer: {
-        contentBase: ('./'),
+        contentBase: './build',
         stats: 'errors-warnings',
         overlay: {
             errors: true,
@@ -78,6 +74,7 @@ const developmentConfig = {
         },
         port: envSettings.port
     },
+    devtool: 'inline-source-map',
     watch: true
 };
 
