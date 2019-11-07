@@ -1,9 +1,9 @@
 import "react-picky/dist/picky.css";
 import React from "react";
-import { Filter } from "./Filter";
-import { getLevelData, getTypeData, getTimeData, getTrainerData } from "../../utils/programsDataHelper";
-import { sortTypes } from "../../resources/sortTypes";
-import { Sort } from "./Sort";
+import { Filter } from "../Filter";
+import { getLevelData, getTypeData, getTimeData, getTrainerData } from "../../../utils/programsDataHelper";
+import { sortTypes } from "../../../resources/sortTypes";
+import { Sort } from "../Sort";
 
 class FilterSortDesktopMode extends React.Component {
     render() {

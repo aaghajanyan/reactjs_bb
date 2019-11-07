@@ -13,8 +13,10 @@
 @import "./styleSheets/footer/dropdownComponent.css";
 @import "./styleSheets/footer/additionalInfo.css";
 @import "./styleSheets/button.css";
-@import "./styleSheets/programs/filterSortTabletMode";
-@import "./styleSheets/programs/sortTabletMode.css";
+@import "./styleSheets/programs/tablet/filterSortTabletMode";
+@import "./styleSheets/programs/tablet/sortTabletMode.css";
+@import "./styleSheets/programs/tablet/filterTabletMode.css";
+@import "./styleSheets/programs/tablet/filterDropdown.css";
 
 body {
     font-family: Lato, sans-serif;

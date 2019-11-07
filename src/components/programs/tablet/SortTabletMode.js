@@ -1,7 +1,7 @@
 import "react-picky/dist/picky.css";
 import React from "react";
 import PropTypes from "prop-types";
-import  Messages  from "../../constants/Messages";
+import  Messages  from "../../../constants/Messages";
 
 class SortTabletMode extends React.Component {
     static propTypes = {
