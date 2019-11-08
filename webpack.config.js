@@ -39,7 +39,7 @@ const common = {
             },
             {
                 test: /.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot|ico)$/,
-                use: 'url-loader?limit=100000'
+                use: 'url-loader?limit=10000'
             }
         ]
     },
@@ -56,7 +56,13 @@ const common = {
 
 const productionConfig = {
     mode: 'production',
+    performance: {
+        hints: false,
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
+    },
     optimization: {
+        minimize: true,
         minimizer: [new UglifyJsPlugin({
             uglifyOptions: {
                 compress: {},
@@ -78,7 +84,8 @@ const developmentConfig = {
         },
         port: envSettings.port
     },
-    watch: true
+    watch: true,
+    devtool: 'inline-source-map'
 };
 
 module.exports = function () {

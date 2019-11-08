@@ -1,0 +1,188 @@
+.nav-bar {
+    height: 88px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+}
+
+.header__nav-bar {
+    font-size: 13px;
+    height: 64px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 2;
+    font-family: "Lato", sans-serif;
+    min-width: 1024px;
+}
+
+.nav-bar__nav-bar-collapse {
+    background-color: white;
+    justify-content: space-between;
+}
+
+.nav-bar__logo {
+    text-align: end;
+}
+
+.nav-bar__logo-img {
+    height: auto;
+    width: 120px;
+}
+
+.nav-bar__toggle-btn {
+    z-index: 2;
+}
+
+.nav-bar__right-items {
+    justify-content: flex-end;
+    align-items: center
+}
+
+.nav-bar__nav-bar-btn {
+    justify-content: flex-start;
+}
+
+.header__nav-bar .nav-bar__nav-bar-collapse .nav-bar__link-item {
+    color: rgb(22, 24, 25);
+    padding: 13px 7px;
+}
+
+.header__nav-bar .nav-bar__nav-bar-collapse .nav-bar__link-item:active,
+.header__nav-bar .nav-bar__nav-bar-collapse .nav-bar__link-item:focus,
+.header__nav-bar .nav-bar__nav-bar-collapse .nav-bar__link-item:hover {
+    color: #2490ff;
+}
+
+.nav-bar__btn {
+    border-radius: 25px;
+    background-color: rgb(36, 144, 255);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px 0px;
+    color: white;
+    height: 28px;
+    width: 142px;
+    border: none;
+}
+
+.nav-bar__btn:hover {
+    transition: box-shadow 0.25s ease 0s, background-color 0.25s ease-out 0s,
+        color 0.25s ease-out 0s;
+    background-color: rgb(0, 96, 167);
+    outline: none;
+}
+
+.nav-bar__btn:focus-within {
+    outline: none;
+}
+
+.nav-bar__login-btn {
+    align-self: center;
+}
+
+.nav-bar__line {
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .nav-bar {
+        height: 60px;
+        background-color: white;
+        z-index: 3;
+    }
+    .header__nav-bar {
+        flex-wrap: nowrap;
+        height: 60px;
+        min-width: auto;
+        width: 100%;
+    }
+
+    .header__nav-bar .nav-bar__toggle-btn {
+        border: none;
+        outline: none;
+        font-size: 14px;
+    }
+
+    .nav-bar__nav-bar-collapse {
+        padding: 25px 0 0 20px;
+        position: fixed;
+        width: 350px;
+        height: 540px;
+        right: 0;
+        top: 0;
+        border-left: 1px solid rgb(189, 189, 189);
+        border-bottom: 1px solid rgb(189, 189, 189);
+        font-size: 16px;
+        z-index: 1;
+    }
+
+    .nav-bar__logo {
+        text-align: center;
+        flex-grow: 1;
+    }
+
+    .nav-bar__logo-img {
+        height: auto;
+        width: 200px;
+    }
+
+    .nav-bar__toggle-close-btn {
+        /* background-image: url("../assets/close-icon.svg");  // not working */
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjI4Ij48cGF0aCBkPSJNMTkgNi40MUwxNy41OSA1IDEyIDEwLjU5IDYuNDEgNSA1IDYuNDEgMTAuNTkgMTIgNSAxNy41OSA2LjQxIDE5IDEyIDEzLjQxIDE3LjU5IDE5IDE5IDE3LjU5IDEzLjQxIDEyeiIvPjxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48L3N2Zz4=");
+        height: 28px;
+        width: 28px;
+        margin-right: 7px;
+    }
+
+    button.nav-bar__toggle-close-btn > span {
+        display: none;
+    }
+
+    .nav-bar__btn-item {
+        font-size: 14px;
+    }
+
+    .nav-bar__line {
+        display: block;
+        width: 100%;
+        color: rgb(189, 189, 189);
+    }
+
+    .nav-bar__right-items {
+        align-items: flex-start;
+    }
+
+    .nav-bar__nav-bar-btn {
+        flex-direction: row;
+    }
+
+    .nav-bar__login-btn {
+        margin: auto 10px;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 400px) {
+    .nav-bar__nav-bar-collapse {
+        width: 100%;
+        min-width: 350px;
+        left: 65px
+    }
+}
+
+@media (max-width: 300px) {
+    .nav-link {
+        padding: 0;        
+    }
+    .nav-bar__logo-img {
+        width: 90px;
+    }
+}   
+
+@media (max-width: 200px) {
+    .nav-bar__nav-bar-collapse {
+        width: 100%;
+        min-width: 350px;
+        left: 65px
+    }
+}
