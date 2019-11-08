@@ -1,10 +1,19 @@
 @import "./styleSheets/navbar.css";
 @import "./styleSheets/imageCarousel.css";
+@import "./styleSheets/programs/programs.css";
+@import "./styleSheets/programs/filter.css";
+@import "./styleSheets/programs/sort.css";
+@import "./styleSheets/programs/tablet/filterSortTabletMode";
+@import "./styleSheets/programs/tablet/sortTabletMode.css";
+@import "./styleSheets/programs/tablet/filterTabletMode.css";
+@import "./styleSheets/programs/tablet/filterDropdown.css";
 
 body {
     font-family: Lato, sans-serif;
     background-color: #f7f8fa;
     position: relative;
+    height:100%;
+
 }
 
 .emptyPage, .pageNotFound{

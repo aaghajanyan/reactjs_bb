@@ -1,0 +1,186 @@
+.filter-container {
+    display: inline-block;
+    height: 40px;
+    position: relative;
+}
+
+.filter-container:hover #picky__button__button,
+.filter-container:hover .filter-container__icon {
+    background-color: white;
+    outline: none;
+}
+.filter-container:focus-within #picky__button__button,
+.filter-container:focus-within .filter-container__icon{
+    background-color: #f0f2f7;
+    outline: none;
+}
+
+.filter-container__icon {
+    height: 35px;
+    width: 40px;
+    padding-left: 15px;
+}
+
+#picky {
+    display: inline;
+    font-size: 12px;
+}
+
+.picky:focus-within {
+    outline: none;
+}
+
+#picky__button__button {
+    background-color: #f7f8fa;
+    height: 35px;
+    width: 105px;
+    padding-left: 15px;
+    border: none;
+    font-weight: bold;
+}
+
+div.programs-container__level > #picky__button__button {
+    width: 170px;
+}
+div.programs-container__type > #picky__button__button {
+    width: 130px;
+}
+div.programs-container__trainer > #picky__button__button {
+    width: 140px;
+}
+
+div.picky > button.picky__input > span {
+    display: none;
+}
+div.programs-container__level > button.picky__input:before {
+    content: "Fitness level";
+}
+
+div.programs-container__time > button.picky__input:before {
+    content: "Time";
+}
+
+div.programs-container__type > button.picky__input:before {
+    content: "Type";
+}
+
+div.programs-container__trainer > button.picky__input:before {
+    content: "Trainer";
+}
+
+.picky__dropdown {
+    margin-left: -42px;
+    outline: none;
+}
+.picky__dropdown li.selected {
+    background-color: white;
+}
+div.programs-container__level .picky__dropdown {
+    width: 210px;
+}
+div.programs-container__time .picky__dropdown {
+    width: 150px;
+}
+div.programs-container__trainer .picky__dropdown {
+    width: 180px;
+}
+div.programs-container__type .picky__dropdown {
+    width: 170px;
+}
+
+.filter-container__item-icon {
+    height: 15px;
+    width: 30px;
+    margin: 5px 10px 0 0;
+}
+
+.filter-container__item-title {
+    font-family: Lato, sans-serif;
+    font-size: 14px;
+    color: #161819;
+    max-width: 70px;
+}
+div.programs-container__trainer div.filter-container__item-title {
+    max-width: 80px;
+}
+
+.filter-container__checkbox {
+    position: absolute;
+    right: 8px;
+    width: 15px;
+    height: 15px;
+    margin-top: 3px;
+}
+
+.programs-container__level .filter-container__item,
+.programs-container__time .filter-container__item,
+.programs-container__type .filter-container__item,
+.programs-container__trainer .filter-container__item {
+    margin: 10px 0 0 5px;
+    border: none;
+    display: flex;
+}
+
+.programs-container__level .filter-container__item:hover,
+.programs-container__time .filter-container__item:hover,
+.programs-container__type .filter-container__item:hover,
+.programs-container__trainer .filter-container__item:hover {
+    background-color: white;
+}
+
+div.programs-container__time img.filter-container__item-icon,
+div.programs-container__trainer img.filter-container__item-icon {
+    display: none;
+}
+
+#badge-item {
+    height: 15px;
+    width: 15px;
+    bottom: 30px;
+    position: absolute;
+    z-index: 2;
+    border-radius: 50%;
+    padding: 2px;
+}
+
+.filter-container__clear-all-btn {
+    min-width: 100px;
+    width: 100%;
+    background-color: white;
+    border: none;
+    height: 47px;
+    margin: 10px 0 0 0;
+    color: #91c7ff;
+    font-family: Lato, sans-serif;
+    font-size: 16px;
+}
+
+.filter-container__clear-all-btn:hover {
+    background-color: #d8dde6;
+    outline: none;
+}
+.filter-container__clear-all-btn:focus {
+    outline: none;
+}
+
+@media (max-width: 800px) {
+    div.programs-container__level > #picky__button__button {
+        width: 135px;
+    }
+    div.programs-container__type > #picky__button__button {
+        width: 105px;
+    }
+    div.programs-container__trainer > #picky__button__button {
+        width: 110px;
+    }
+    
+    div.programs-container__trainer .picky__dropdown {
+        width: 155px;
+    }
+    div.programs-container__type .picky__dropdown {
+        width: 150px;
+    }
+    div.programs-container__level .picky__dropdown {
+        width: 180px;
+    }
+}
