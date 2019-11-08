@@ -1,0 +1,24 @@
+.program-card-deck-container {
+    display: flex;
+    justify-content: start;
+    max-width: 992px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 1007px) {
+    .program-card-deck-container {
+        max-width: 748px;
+    }
+}
+@media (max-width: 767px) {
+    .program-card-deck-container {
+        max-width: 500px;
+    }
+}
+@media (max-width: 639px)  {
+    .program-card-deck-container {
+        max-width: 97%;
+        display: flex;
+        flex-direction: column;
+    }
+}
