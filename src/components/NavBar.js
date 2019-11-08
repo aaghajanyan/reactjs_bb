@@ -32,7 +32,6 @@ class NavBar extends React.Component {
     changeIcon() {
         const waitingTime =  this.state.isOpened ? 300 : 0;
         this.manageScroll();
-
         setTimeout(() => {
             this.setState({
                 isOpened: !this.state.isOpened
@@ -40,19 +39,16 @@ class NavBar extends React.Component {
         }, waitingTime);
     }
 
-
     getLinkItems(itemsList) {
         const items = itemsList.map(item => (
             <NavLink key={item.label} to={item.link} className={item.className} >
                {item.isBtn ? <button className="nav-bar__btn"> {item.label} </button> : item.label}
             </NavLink>
         ));
-
         return items;
     }
 
     render() {
-        
         const closeBtnClassName = this.state.isOpened ? "nav-bar__toggle-close-btn" : " ";
         const classes = classNames(
             "nav-bar__toggle-btn",
