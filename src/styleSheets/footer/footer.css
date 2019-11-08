@@ -1,0 +1,23 @@
+.footer-container {
+    background-color: #f7f8fa;
+}
+
+.footer-container__footer-details-container {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-container__footer-details {
+    display: flex;
+    justify-content: center;
+    max-width: 1024px;
+    margin-left: 30px;
+}
+
+@media (max-width: 637px) {
+    .footer-container__footer-details {
+        display: block;
+        text-align: center;
+        margin-left: 0;
+    }
+}

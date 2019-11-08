@@ -1,0 +1,51 @@
+.media-container {
+    margin: 45px 10px 0 0;
+    flex-direction: column;
+}
+
+.media-container__media-content {
+    margin-bottom: 20px;
+    display: flex;
+}
+.media-container__social-content {
+    display: flex;
+
+}
+.media-container__market-content {
+    display: flex;
+    justify-content: flex-end;
+    height: 62px;
+}
+
+@media (max-width: 637px) {
+    .media-container {
+        width: 90%;
+        max-width: 100%;
+        margin-top: 0;
+    }
+    .media-container__media-content {
+        width: auto;
+        height: auto;
+        justify-content: center;
+        margin-bottom: 0;
+    }
+    .media-container__media-content > .media-container__media-link {
+        margin-left: 18px;
+        margin-bottom: 30px;
+    }
+    .media-container__market-content {
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 315px) {
+    .media-container__market-content {
+        flex-direction: column;
+    }
+    .media-container__market-content > .media-container__media-link:first-child {
+        margin-bottom: 5px;      
+    }
+    .media-container__market-content > .media-container__media-link:first-child .media-container__market-item {
+        width: 105px;     
+    }
+}
