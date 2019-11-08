@@ -1,10 +1,10 @@
 import React from "react";
-import  Messages  from "../../constants/Messages";
+import  Messages  from "../../../constants/Messages";
 import { ProgramCardDeck } from "./ProgramCardDeck";
-import { programData } from "../../resources/programsData";
+import { programData } from "../../../resources/programsData";
 
 import { FilterSortTabletMode } from "./tablet/FilterSortTabletMode"
-import { filterSortNames } from "../../resources/filterSort";
+import { filterSortNames } from "../../../resources/filterSort";
 import { FilterSortDesktopMode } from "./desktop/FilterSortDesktopMode";
 
 class Programs extends React.Component {

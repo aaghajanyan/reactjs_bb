@@ -36,3 +36,24 @@
     border-radius: 50%;
     padding: 2px;
 }
+
+@media (max-width: 250px)  {
+    .filter-dropdown-container__icon{
+        height: 15px;
+        width: 15px;
+    }
+}
+
+@media (max-width: 200px)  {
+    .filter-dropdown-container__icon{
+        height: 7px;
+        width: 7px;
+    }
+
+    .filter-dropdown-container__arrow-icon {
+        height: 6px;
+        width: 10px;
+        float: right;
+        margin-top: 12px;
+    }
+}

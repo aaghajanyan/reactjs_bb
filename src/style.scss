@@ -23,3 +23,9 @@ body {
     background-color: #f7f8fa;
     position: relative;
 }
+
+.emptyPage, .pageNotFound{
+    height: 200px;
+    color: red;
+    text-align: center;
+}

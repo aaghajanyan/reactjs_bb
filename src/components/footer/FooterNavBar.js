@@ -1,21 +1,22 @@
 import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
-import { Link } from "../../reactComponents/Link";
-import { links } from "../../resources/navbarConstants";
+import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
 
 class FooterNavBar extends React.Component {
+    static propTypes = {
+        navBarItems: PropTypes.array
+    }
+    
     render() {
-        const bottomPart = links.bottomPart.map(item => (
-            <Link
+        const bottomPart = this.props.navBarItems.map(item => (
+            <NavLink
                 key={item.label}
-                href={item.link}
-                type={item.isBtn}
+                to={item.link}
                 className={item.className}
-                active={item.active}
-                onClick={() => {}}
             >
                 {item.label}
-            </Link>
+            </NavLink>
         ));
 
         return (

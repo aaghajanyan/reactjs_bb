@@ -31,3 +31,17 @@
     height: 7px;
     margin-top: 19px
 }
+
+@media (max-width: 250px)  {
+    .filterSort-container {
+        display: flex;
+        justify-content: center;
+        margin: 10px 15px 10px 15px;
+        height: 44px;
+    }
+    .filterSort-container__image {
+        width: 8px;
+        height: 4px;
+        margin-top: 19px;
+    }
+}

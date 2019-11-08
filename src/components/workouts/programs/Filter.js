@@ -3,7 +3,7 @@ import "react-picky/dist/picky.css";
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { Badge } from "react-bootstrap";
-import  Messages  from "../../constants/Messages";
+import  Messages  from "../../../constants/Messages";
 
 class Filter extends React.Component {
     constructor(props) {

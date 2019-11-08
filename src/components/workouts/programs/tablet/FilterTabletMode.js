@@ -1,6 +1,6 @@
 import React from "react";
 import Collapsible from "react-collapsible";
-import { filterData } from "../../../resources/filterData";
+import { filterData } from "../../../../resources/filterData";
 import { FilterDropdown } from "./FilterDropdown";
 import PropTypes from "prop-types";
 

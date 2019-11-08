@@ -2,7 +2,7 @@ import "react-picky/dist/picky.css";
 import React from "react";
 import PropTypes from "prop-types";
 import { SortTabletMode } from "./SortTabletMode";
-import { sortTypes } from "../../../resources/sortTypes";
+import { sortTypes } from "../../../../resources/sortTypes";
 import { FilterTabletMode } from "./FilterTabletMode";
 
 class FilterSortTabletMode extends React.Component {

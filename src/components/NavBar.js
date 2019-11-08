@@ -1,68 +1,74 @@
 import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
-import { Link } from "../reactComponents/Link";
-import { links, NavBarConstants } from "../resources/navbarConstants";
+import PropTypes from "prop-types";
 import classNames from "classnames";
+import { NavLink } from "react-router-dom";
 
 class NavBar extends React.Component {
+    static propTypes = {
+        navBarItems: PropTypes.object
+    }
+
     constructor(props) {
         super(props);
         this.state = {
-            isOpened: false,
-            iconClassName: ""
+            isOpened: false
         };
         this.changeIcon = this.changeIcon.bind(this);
     }
 
     changeIcon() {
-        this.setState({
-            isOpened: !this.state.isOpened,
-            iconClassName: this.state.isOpened ? " " : "nav-bar__toggle-close-btn"
-        });
+        const waitingTime =  this.state.isOpened ? 300 : 0;
+        setTimeout(() => {
+            this.setState({
+                isOpened: !this.state.isOpened
+            });
+        }, waitingTime);
     }
 
     getLinkItems(itemsList) {
         const items = itemsList.map(item => (
-            <Link
+            <NavLink
                 key={item.label}
-                href={item.link}
-                type={item.isBtn}
+                to={item.link}
                 className={item.className}
-                active={item.active}
-                onClick={() => {}}
             >
-                {item.label}
-            </Link>
+               {item.isBtn ? <button className="nav-bar__btn"> {item.label} </button> : item.label}
+            </NavLink>
         ));
+
         return items;
     }
+
     render() {
+        
+        const closeBtnClassName = this.state.isOpened ? "nav-bar__toggle-close-btn" : " ";
         const classes = classNames(
             "nav-bar__toggle-btn",
-            this.state.iconClassName,
-          );
-          const leftItems = this.getLinkItems(links.leftPart);
-          const rightItems = this.getLinkItems(links.rightPart);
-          const rightBtn = this.getLinkItems(links.rightPartBtn);
+            closeBtnClassName,
+        );
+        const { navBarItems } = this.props
+        const primaryNav = this.getLinkItems(navBarItems.primaryNav);
+        const secondaryNav = this.getLinkItems(navBarItems.secondaryNav);
+        const authNav = this.getLinkItems(navBarItems.authNav);
           
         return (
-            <div className="nav-bar h">
+            <div className="nav-bar">
                 <Navbar className="header__nav-bar" expand="lg">
-                    <Nav.Link className="nav-bar__logo" to="#home">
-                        <img className="nav-bar__logo-img" src={NavBarConstants.logoSrc} />
+                    <Nav.Link className="nav-bar__logo" href="/">
+                        <img className="nav-bar__logo-img" src={navBarItems.logoSrc} />
                     </Nav.Link>
                     <Navbar.Toggle onClick={this.changeIcon} className={classes}/>
                     <Navbar.Collapse className="mr-auto nav-bar__nav-bar-collapse">
                         <Nav className="nav-bar__items nav-bar__left-items ">
-                            <Nav>{leftItems}</Nav>
+                            <Nav>{primaryNav}</Nav>
                         </Nav>
                         <hr className="nav-bar__line" />
                         <Nav className="nav-bar__items nav-bar__right-items">
-                            {rightItems}
+                            {secondaryNav}
                             <hr className="nav-bar__line" />
-                            <Nav className="nav-bar__items nav-bar__nav-bar-btn"> {rightBtn} </Nav>
+                            <Nav className="nav-bar__items nav-bar__nav-bar-btn"> {authNav} </Nav>
                         </Nav>
-
                     </Navbar.Collapse>
                 </Navbar>
             </div>

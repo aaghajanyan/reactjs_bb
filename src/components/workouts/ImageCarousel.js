@@ -1,6 +1,6 @@
 import React from "react";
-import { imagesList, TABLET_SIZE, MOBILTE_SIZE } from "../resources/images";
-import { getRandomIndex } from "../utils/helper";
+import { imagesList, TABLET_SIZE, MOBILTE_SIZE } from "../../resources/images";
+import { getRandomIndex } from "../../utils/helper";
 
 class ImageCarousel extends React.Component {
     constructor() {

@@ -10,7 +10,7 @@
 
   .filter-container-collapse__tablet-dropdown {
     border-bottom: 1px solid #f0f2f7;
-
+    min-width: 200px;
   }
 
   .filter-container-collapse__tablet-close {
