@@ -1,0 +1,23 @@
+.images-container {
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .images-container__image-item {
+      height: 215px;
+      width: 100%;
+      cursor: pointer;
+  }
+  
+  @media (max-width: 1520px) {
+    .images-container__image-item {
+        width: auto;
+    }
+  }
+  
+  @media (max-width: 550px) {
+      .images-container__image-item {
+          width: auto;
+          height: auto;
+      }
+  }

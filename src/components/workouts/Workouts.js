@@ -1,9 +1,12 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { ImageCarousel } from "./ImageCarousel";
 
 class Workouts extends React.Component {
     render () {
         return (
-            <h1 className="emptyPage"> Workouts </h1>
+            <Fragment>
+                <ImageCarousel />
+            </Fragment>
         );
     }
 }
