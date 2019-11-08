@@ -15,16 +15,31 @@ class NavBar extends React.Component {
             isOpened: false
         };
         this.changeIcon = this.changeIcon.bind(this);
+        this.manageScroll = this.manageScroll.bind(this);
+    }
+
+    manageScroll() {
+        if(!this.state.isOpened) {
+            window.scroll({
+               top: 0
+            });
+            document.body.classList.add("hide-scroll");
+        } else {
+            document.body.classList.remove("hide-scroll");
+        }
     }
 
     changeIcon() {
         const waitingTime =  this.state.isOpened ? 300 : 0;
+        this.manageScroll();
+
         setTimeout(() => {
             this.setState({
                 isOpened: !this.state.isOpened
             });
         }, waitingTime);
     }
+
 
     getLinkItems(itemsList) {
         const items = itemsList.map(item => (

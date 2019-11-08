@@ -23,9 +23,11 @@ body {
     background-color: #f7f8fa;
     position: relative;
     height:100%;
-
 }
 
+.hide-scroll {
+    overflow-y: hidden;
+}
 .emptyPage, .pageNotFound{
     height: 200px;
     color: red;

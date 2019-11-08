@@ -4,15 +4,15 @@
     display: flex;
     justify-content: center;
     position: sticky;
+    top: 0;
+    z-index: 2;
 }
 
 .header__nav-bar {
     font-size: 13px;
     height: 64px;
     position: sticky;
-    top: 0;
     background-color: white;
-    z-index: 2;
     font-family: "Lato", sans-serif;
     min-width: 1024px;
 }
