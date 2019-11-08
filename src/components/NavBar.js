@@ -55,7 +55,7 @@ class NavBar extends React.Component {
         return (
             <div className="nav-bar">
                 <Navbar className="header__nav-bar" expand="lg">
-                    <Nav.Link className="nav-bar__logo" to="#home">
+                    <Nav.Link className="nav-bar__logo" href="/">
                         <img className="nav-bar__logo-img" src={navBarItems.logoSrc} />
                     </Nav.Link>
                     <Navbar.Toggle onClick={this.changeIcon} className={classes}/>

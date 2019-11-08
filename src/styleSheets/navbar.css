@@ -160,3 +160,30 @@
         font-weight: bold;
     }
 }
+
+@media (max-width: 400px) {
+    .nav-bar__nav-bar-collapse {
+        width: 100%;
+        min-width: 350px;
+        left: 65px
+    }
+}
+
+@media (max-width: 300px) {
+    .nav-link {
+        padding: 0;        
+    }
+    .nav-bar__logo-img {
+        width: 90px;
+    }
+}   
+
+@media (max-width: 200px) {
+    .nav-bar__nav-bar-collapse {
+        width: 100%;
+        min-width: 350px;
+        left: 65px
+    }
+}
+
+ 
