@@ -4,13 +4,13 @@
     display: flex;
     justify-content: center;
     position: sticky;
+    z-index: 2;
+    top: 0;
 }
 
 .header__nav-bar {
     font-size: 13px;
     height: 64px;
-    position: sticky;
-    top: 0;
     background-color: white;
     z-index: 2;
     font-family: "Lato", sans-serif;
